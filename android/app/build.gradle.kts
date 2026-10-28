@@ -42,6 +42,18 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging)
+
+// Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+
+// Coroutines
+    implementation(libs.kotlinx.coroutines.android)
 
     // Navigation Component
     implementation(libs.androidx.navigation.fragment.ktx)
