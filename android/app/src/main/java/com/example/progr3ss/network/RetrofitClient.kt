@@ -9,8 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitClient {
 
 
-    private const val BASE_URL = "http://10.0.2.2:8080/"
-
+    private const val BASE_URL = "http://localhost:8080/"
+    // "http://10.0.2.2:8080/"
+    //   & "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" reverse tcp:8080 tcp:8080
+    //    & "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" reverse --remove-all
     fun getInstance(context: Context): ApiService {
         val logging = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
