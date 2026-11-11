@@ -2,6 +2,7 @@ package com.example.progr3ss.network
 
 import com.example.progr3ss.model.AuthRequest
 import com.example.progr3ss.model.AuthResponse
+import com.example.progr3ss.model.ScheduleResponse
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -9,7 +10,8 @@ import retrofit2.http.Body
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
-
+import retrofit2.http.GET
+import retrofit2.http.Query
 interface ApiService {
 
     @POST("auth/local/signin")
@@ -23,4 +25,7 @@ interface ApiService {
         @Part("email") email: RequestBody,
         @Part("password") password: RequestBody
     ): Response<ResponseBody>
+
+    @GET("schedule/day")
+    suspend fun getScheduleByDay(@Query("date") day: String): List<ScheduleResponse>
 }
